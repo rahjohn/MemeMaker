@@ -1,16 +1,13 @@
 package com.rachelelisejohnson.mememaker;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import java.io.IOException;
 
@@ -47,14 +44,9 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
-                Intent intent = new Intent(this, EditActivity.class);
-                intent.putExtra("Bitmap Image", bitmap);
-                startActivity(intent);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Intent intent = new Intent(this, EditActivity.class);
+            intent.putExtra("Uri Image", selectedImage);
+            startActivity(intent);
         }
     }
 }
