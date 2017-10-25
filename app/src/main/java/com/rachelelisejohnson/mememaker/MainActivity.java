@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && null != data) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && null != data && data.getData() != null) {
             Uri selectedImage = data.getData();
             Intent intent = new Intent(this, EditActivity.class);
-            intent.putExtra("Uri Image", selectedImage);
+            intent.putExtra("Uri Image", selectedImage.toString());
             startActivity(intent);
         }
     }
