@@ -23,8 +23,6 @@ public class EditActivity extends AppCompatActivity {
 
     Bitmap bitmap = null;
 
-    private TextView mTextMessage;
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
