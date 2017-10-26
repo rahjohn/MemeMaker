@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.rachelelisejohnson.mememaker"
         minSdkVersion 23
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -47,7 +47,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.+'
 >>>>>>> Updated gradle and sdk to latest version possible
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:design:26.1.0'
 
     compile 'com.adobe.creativesdk.foundation:auth:0.9.1251'
     compile "com.adobe.creativesdk:image:4.8.4"
