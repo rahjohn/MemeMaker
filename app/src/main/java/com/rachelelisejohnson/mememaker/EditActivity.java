@@ -57,7 +57,7 @@ public class EditActivity extends AppCompatActivity {
         }
 
         // Only enable specific tools
-        ToolsFactory.Tools[] tools = {CROP, TEXT, MEME, ORIENTATION};
+        ToolsFactory.Tools[] tools = {CROP, MEME, ORIENTATION};
 
         Intent editor_intent = new AdobeImageIntent.Builder(EditActivity.this)
                 // Launch the meme maker right away
