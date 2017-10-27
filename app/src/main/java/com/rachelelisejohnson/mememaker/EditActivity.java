@@ -48,20 +48,11 @@ public class EditActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Uri uri = Uri.parse(intent.getExtras().getString("Uri Image"));
-        try {
-            bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-            ImageView image = (ImageView) findViewById(R.id.edit_image);
-            image.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         // Only enable specific tools
         ToolsFactory.Tools[] tools = {CROP, MEME, ORIENTATION};
 
         Intent editor_intent = new AdobeImageIntent.Builder(EditActivity.this)
                 // Launch the meme maker right away
-                .quickLaunchTool(MEME, null)
                 .saveWithNoChanges(false)
                 .setData(uri)
                 .withNoExitConfirmation(true)
@@ -85,6 +76,8 @@ public class EditActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else {
+            finish();
         }
     }
 
